@@ -77,7 +77,7 @@ function checkWinningCombinations() {
 }
 
 function renderPlayerWin() {
-  $(".game-result").text(`Player ${currentPlayerTurn} has won.`);
+  $(".game-result").text(`Player ${currentPlayerTurn} wins!`);
 }
 
 function renderDraw() {
