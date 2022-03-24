@@ -1,38 +1,77 @@
 * {
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
 }
 
 :root {
-  --cell-size: 150px;
+  --cell-size: 100px;
   --mark-size: calc(var: var(--cell-size) * 0.9);
 }
 
 body {
   background-color: beige;
-  margin: 0 auto;
-  font-size: 50px;
+}
+
+.container {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 
 .game-board {
-  width: 100vw;
-  height: 100vh;
+  margin: 0 auto;
   display: grid;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  max-width: 300px;
 }
 
-.grid-item {
-  background-color: lightgray;
+.grid-cell {
   border: 1px solid black;
   width: var(--cell-size);
   height: var(--cell-size);
+  cursor: pointer;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.grid-item:nth-child(1),
-.grid-item:nth-child(2),
-.grid-item:nth-child(3) {
-  border-top: none;
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+#restart {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.game-result {
+  margin: 10px;
+}
+
+.display {
+  margin: 10px;
+}
+
+.disable-game {
+  pointer-events: none;
 }
