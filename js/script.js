@@ -3,7 +3,7 @@ $(document).ready();
 let player_x_markings = [];
 let player_o_markings = [];
 
-let currentPlayerTurn = "X"; // example: "playerX" or playerO
+let currentPlayerTurn = "X"; // "X" or "O"
 
 const winning_combinations = [
   [1, 2, 3],
@@ -23,10 +23,13 @@ $(".grid-cell").on("click", function (eventObject) {
   validateChoice(gridNum);
 });
 
+$("#restart").click(restartGame);
+
+// Main function to validate the user's boarding selection.
+
 function validateChoice(gridNum) {
   playerMarkChoice(gridNum);
   const hasPlayerWon = checkWinningCombinations();
-  // If winning combination found, log a string letting the player know that they've won.
   if (hasPlayerWon === true) {
     renderPlayerWin();
     endGame();
@@ -40,8 +43,6 @@ function validateChoice(gridNum) {
     }
   }
 }
-// 1. Function that will take a grid number selection, starting with player X turn.
-// 2. Add that number to player_x_markings array
 
 function playerMarkChoice(gridNum) {
   if (currentPlayerTurn === "X") {
@@ -84,8 +85,6 @@ function renderDraw() {
   $(".game-result").text(`The game is a draw!`);
 }
 
-//Function to switch player turns.
-
 function switchPlayers() {
   currentPlayerTurn = currentPlayerTurn === "X" ? "O" : "X";
 }
@@ -94,16 +93,11 @@ function renderPlayerTurn() {
   $(".player-turn").text(currentPlayerTurn);
 }
 
-$("#restart").click(restartGame);
-
 function restartGame() {
-  // empty arrays
   player_x_markings = [];
   player_o_markings = [];
-  // default player turn
   currentPlayerTurn = "X";
   renderPlayerTurn();
-  // empty inner html text
   $(".grid-cell").text("");
   $(".game-result").text("");
   $(".grid-cell").removeClass("disable-game");
