@@ -1,7 +1,7 @@
 # Tic-tac-toe game
 A simple game of noughts and crosses played between 2 people.
 
-Click [here](https://rodsejas.github.io/supreme-funicular/) to play the game.
+Click [here](https://rodsejas.github.io/tic-tac-toe/) to play the game.
 
 ## Motivation
 This game was created to solidify my knowledge in planning, building, and hosting a website from scratch. By the end of the build, the main takeaways were always considering the application state when planning and building (initial, when the user clicks, and how to convey the new state back to the user).
